@@ -21,31 +21,80 @@ public class Problema03 {
         Scanner entrada = new Scanner(System.in);
         entrada.useLocale(Locale.US);
 
-        String tipoEmpleado;
         int tipo;
-        String anosServicio;
         int ano;
         String nombre;
         double sueldoInicial;
         double bonificacion;
         double nuevoSueldo;
-        
+        double incremento;
+        double porcentajeIncremento;
+
         System.out.println("Ingrese su nombre");
         nombre = entrada.nextLine();
-        System.out.println("Ingrese  su sueldo actual");
+        System.out.println("Ingrese su sueldo actual");
         sueldoInicial = entrada.nextDouble();
-        
-        System.out.printf("Ingrese los años de servicio.\n"
-                + "1 Vehículo liviano particular\n"
-                + "2 Vehículo grande particular\n"
-                + "3 Taxi \n"
-                + "4 Bus urbano\n");
-        tipo = entrada.nextInt();
-        System.out.printf("Ingrese su tipo de coche.\n"
+
+        System.out.printf("Ingrese los años de servicio.\n");
+        ano = entrada.nextInt();
+
+        System.out.printf("Ingrese el tipo de empelado que es.\n"
                 + "1 \n"
                 + "2 \n"
                 + "3 \n"
-                + "4 \n");
-        ano = entrada.nextInt();
+                + "4 \n"
+                + "5 o cualquier otro\n");
+        tipo = entrada.nextInt();
+
+        switch (tipo) {
+            case 1:
+                incremento = 5;
+                break;
+            case 2:
+                incremento = 7;
+                break;
+            case 3:
+                incremento = 9;
+                break;
+            case 4:
+                incremento = 12;
+                break;
+            default:
+                incremento = 15;
+                break;
+        }
+        if (ano >= 100) {
+            bonificacion = 100;
+        } else {
+            if (ano >= 5) {
+                bonificacion = 60;
+            } else {
+                if (ano >= 2) {
+                    bonificacion = 30;
+                } else {
+                    bonificacion = 0;
+                }
+            }
+        }
+        
+        porcentajeIncremento = (sueldoInicial * incremento) / 100;
+        nuevoSueldo = sueldoInicial + bonificacion + porcentajeIncremento;
+       
+                
+        System.out.printf("Ingrese la operacion que requiera hacer.\n"
+                + "Empelado: %s\n"
+                + "Tipo de empelado: %s\n"
+                + "Años de servivio: %s\n\n"
+                + "Sueldo inicial: $%.2f\n"
+                + "Porcentaje de incremento; %.2f %%\n"
+                + "Incremento salarial: $%.2f\n"
+                + "Bonificacion por antigüedad: $%.2f\n\n"
+                + "Nuevo sueldo: $%.2f\n",
+                nombre, tipo, ano, sueldoInicial, incremento, 
+                porcentajeIncremento, bonificacion, nuevoSueldo);
+               
+        
+
     }
+
 }
