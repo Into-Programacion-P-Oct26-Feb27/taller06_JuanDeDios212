@@ -26,7 +26,7 @@ public class Ejercicio02 {
         double valorFijo = 0;
         double porcentajeAvaluo = 0;
         double recargo = 0;
-        String carro;
+        String carro = "No seleccionado";
         double valorBase;
         double valorFinal;
         
@@ -44,22 +44,22 @@ public class Ejercicio02 {
 
         switch(tipo) {
             case 1:
-                porcentajeAvaluo = 0.01;
+                porcentajeAvaluo = 0.0001;
                 valorFijo = 2;
                 carro = "Vehículo liviano particular";
                 break;
             case 2:
-                porcentajeAvaluo = 0.02;
+                porcentajeAvaluo = 0.0002;
                 valorFijo = 2.50;
                 carro = "Vehículo grande particular";
                 break;
             case 3:
-                porcentajeAvaluo = 0.04;
+                porcentajeAvaluo = 0.0004;
                 valorFijo = 1.50;
                 carro = "Taxi";
                 break;
             case 4:
-                porcentajeAvaluo = 0.05;
+                porcentajeAvaluo = 0.0005;
                 valorFijo = 2.20;
                 carro = "Bus urbano";
                 break;
