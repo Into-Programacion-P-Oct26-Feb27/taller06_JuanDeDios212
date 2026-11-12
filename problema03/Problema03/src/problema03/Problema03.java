@@ -20,8 +20,32 @@ public class Problema03 {
         // TODO code application logic here
         Scanner entrada = new Scanner(System.in);
         entrada.useLocale(Locale.US);
+
+        String tipoEmpleado;
+        int tipo;
+        String anosServicio;
+        int ano;
+        String nombre;
+        double sueldoInicial;
+        double bonificacion;
+        double nuevoSueldo;
         
+        System.out.println("Ingrese su nombre");
+        nombre = entrada.nextLine();
+        System.out.println("Ingrese  su sueldo actual");
+        sueldoInicial = entrada.nextDouble();
         
+        System.out.printf("Ingrese los años de servicio.\n"
+                + "1 Vehículo liviano particular\n"
+                + "2 Vehículo grande particular\n"
+                + "3 Taxi \n"
+                + "4 Bus urbano\n");
+        tipo = entrada.nextInt();
+        System.out.printf("Ingrese su tipo de coche.\n"
+                + "1 \n"
+                + "2 \n"
+                + "3 \n"
+                + "4 \n");
+        ano = entrada.nextInt();
     }
-    
 }
