@@ -23,7 +23,7 @@ public class Problema012 {
         int opcion;
         double resultado = 0;
 
-        System.out.println("Ingrese la operacion que requiera hacer.\n"
+        System.out.printf("Ingrese la operacion que requiera hacer.\n"
                 + "1 Suma\n"
                 + "2 Resta\n"
                 + "3 Multiplicación \n"
@@ -37,29 +37,35 @@ public class Problema012 {
         double primero = entrada.nextDouble();
         System.out.println("Ingrese el segudno dígito");
         double segundo = entrada.nextDouble();
-
-        if (opcion == 1) {
-            resultado = primero + segundo;
-        } else {
-            if (opcion == 2) {
-                resultado = primero - segundo;
+        if (primero >= segundo) {
+            if (opcion == 1) {
+                resultado = primero + segundo;
             } else {
-                if (opcion == 3) {
-                    resultado = primero * segundo;
+                if (opcion == 2) {
+                    resultado = primero - segundo;
                 } else {
-                    if (opcion == 4) {
-                        resultado = primero / segundo;
+                    if (opcion == 3) {
+                        resultado = primero * segundo;
                     } else {
-                        if (opcion == 5) {
-                            resultado = primero % segundo;
+                        if (opcion == 4) {
+                            resultado = primero / segundo;
                         } else {
-                            if (opcion == 6) {
-                                resultado = Math.pow(primero, segundo);
+                            if (opcion == 5) {
+                                resultado = primero % segundo;
+                            } else {
+                                if (opcion == 6) {
+                                    resultado = Math.pow(primero, segundo);
+                                } else {
+                                    System.out.println("No es una opcion valida");
+                                    
+                                }
                             }
                         }
                     }
                 }
             }
+        } else {
+            System.out.println("No se puede realizar la operación");
         }
         System.out.printf("El resultado de la operación es %.2f\n", resultado);
     }

@@ -22,8 +22,8 @@ public class Problema01 {
         entrada.useLocale(Locale.US);
         int opcion;
         double resultado = 0;
-        
-        System.out.println("Ingrese la operacion que requiera hacer.\n"
+
+        System.out.printf("Ingrese la operacion que requiera hacer.\n"
                 + "1 Suma\n"
                 + "2 Resta\n"
                 + "3 Multiplicación \n"
@@ -32,37 +32,40 @@ public class Problema01 {
                 + "6 Potencia");
         opcion = entrada.nextInt();
         entrada.nextLine();
-        
+
         System.out.println("Ingrese el primer dígito");
         double primero = entrada.nextDouble();
         System.out.println("Ingrese el segudno dígito");
         double segundo = entrada.nextDouble();
 
-        
-        
-        
-        switch(opcion){
-            case 1:
-                resultado = primero + segundo;
+        if (primero >= segundo) {
+            switch (opcion) {
+                case 1:
+                    resultado = primero + segundo;
+                    break;
+                case 2:
+                    resultado = primero - segundo;
+                    break;
+                case 3:
+                    resultado = primero * segundo;
+                    break;
+                case 4:
+                    resultado = primero / segundo;
+                    break;
+                case 5:
+                    resultado = primero % segundo;
+                    break;
+                case 6:
+                    resultado = Math.pow(primero, segundo);
+                    break;
+                default:
+                    System.out.println("No es una opcion valida");
                 break;
-            case 2:
-                resultado = primero - segundo;
-                break;
-            case 3:
-                resultado = primero * segundo;
-                break;
-            case 4:
-                resultado = primero / segundo;
-                break;
-            case 5:
-                resultado = primero % segundo;
-                break;
-            case 6:
-                resultado = Math.pow(primero, segundo);
-                break;
+            }
+        } else {
+            System.out.println("No se puede realizar la operación");
         }
-        
-    System.out.printf("El resultado de la operación es %.2f\n", resultado); 
+        System.out.printf("El resultado de la operación es %.2f\n", resultado);
     }
-    
+
 }
